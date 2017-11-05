@@ -6,7 +6,7 @@
 #    By: amkhuma <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/16 10:17:19 by amkhuma           #+#    #+#              #
-#    Updated: 2017/10/22 12:21:21 by amkhuma          ###   ########.fr        #
+#    Updated: 2017/11/05 14:14:19 by amkhuma          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,6 @@ clean:
 fclean: clean
 		@rm -rf $(NAME)
 		@rm -rf libft/libft.a
-		@echo "\033[00;32mRemoved '$(NAME)'
+		@echo "\033[00;32mRemoved '$(NAME)'"
 
 re: fclean all

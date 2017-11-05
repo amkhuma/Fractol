@@ -6,7 +6,7 @@
 /*   By: amkhuma <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/18 12:52:38 by amkhuma           #+#    #+#             */
-/*   Updated: 2017/09/08 12:08:24 by amkhuma          ###   ########.fr       */
+/*   Updated: 2017/11/05 12:52:43 by amkhuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char				*ft_strjoin(char const *s1, char const *s2);
 void				ft_putnbr(int n);
 void				ft_putnbr_fd(int n, int fd);
 char				**ft_sstrnew(size_t size);
-int 				ft_sstrlen(char **s);
+int					ft_sstrlen(char **s);
 char				**ft_split(char *str);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_strmap(char const *s, char (*f)(char));
