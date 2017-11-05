@@ -24,6 +24,14 @@ void    screen_loop(t_frac *s)
                 ft_mandelbrot(s);
             else if (ft_strequ("julia", s->fractal))
                 ft_julia(s);
+            else if (ft_strequ("burningship", s->fractal))
+                ft_burning_ship(s);
+            else if (ft_strequ("tricorn", s->fractal))
+                ft_tricorn(s);
+            else if (ft_strequ("batman", s->fractal))
+                ft_batman(s);
+            else if (ft_strequ("flower", s->fractal))
+                ft_flower(s);
             s->x++;
         }
         s->y++;

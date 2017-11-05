@@ -12,6 +12,14 @@
 
 #include "../includes/fractol.h"
 
+int     init_colours(t_frac *s)
+{
+    s->col.red = 120;
+    s->col.green = 125;
+    s->col.blue = 225;
+    return (0);
+}
+
 int     init_mandelbrot(t_frac *s)
 {
     s->zoom = 1;
@@ -38,5 +46,14 @@ int     init_julia(t_frac *s)
 	s->maxIterations = 300;
 	s->cen.real = -0.7;
     s->cen.imag = 0.27015;
+    return (0);
+}
+
+int     init_extras(t_frac *s)
+{
+    s->pos.real = (s->x - WIDTH / 2) / (0.5 * s->zoom * WIDTH / 2) + s->moveX;
+	s->pos.imag = (s->y - HEIGHT / 2) / (0.5 * s->zoom * HEIGHT / 2) + s->moveY;
+	s->z_r = 0;
+	s->z_im = 0;
     return (0);
 }

@@ -21,20 +21,13 @@ int    expose(t_frac *s)
     return (0);
 }
 
-int             main(int argc, char **argv)
+static  void    init(t_frac *s)
 {
-    t_frac *s;
-
-    if (argc != 2)
-        ft_error("Usage: ./fractol [Fractal]");
-    if (!(ft_strequ("mandelbrot", argv[1]) || ft_strequ("julia", argv[1])))
-        ft_error("Usage: ./fractol [Fractal = mandelbrot || julia]");
-    s = (t_frac *)ft_memalloc(sizeof(t_frac));
-    s->fractal = argv[1];
     s->mlx = mlx_init();
     if (s->mlx == NULL)
         ft_error("Could not init mlx");
     s->win = mlx_new_window(s->mlx, WIDTH, HEIGHT, "Fractol");
+    init_colours(s);
     init_mandelbrot(s);
     init_julia(s);
     expose(s);
@@ -43,5 +36,18 @@ int             main(int argc, char **argv)
     mlx_mouse_hook(s->win, &mouse_zoom, s);
     mlx_hook(s->win, 6, (1 << 6), &mouse_hook, s);
     mlx_loop(s->mlx);
+}
+
+int             main(int argc, char **argv)
+{
+    t_frac *s;
+
+    if (argc != 2)
+        ft_error("Usage: ./fractol [Fractal]");
+    if (!(ft_strequ("mandelbrot", argv[1]) || ft_strequ("julia", argv[1]) || ft_strequ("burningship", argv[1]) || ft_strequ("tricorn", argv[1]) || ft_strequ("flower", argv[1]) || ft_strequ("batman", argv[1])))
+        ft_error("Usage: ./fractol [Fractal = mandelbrot || julia || burningship || tricorn || batman || flower]");
+    s = (t_frac *)ft_memalloc(sizeof(t_frac));
+    s->fractal = argv[1];
+    init(s);
     return (0);
 }

@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
-#include <stdio.h>
-#include <math.h>
 
 int     keyboard(int keycode, t_frac *s)
 {
@@ -22,9 +20,9 @@ int     keyboard(int keycode, t_frac *s)
 		mlx_destroy_window(s->mlx, s->win);
         exit(0);
     }
-	if (keycode >= 123 && keycode <= 126)
+	if (keycode >= 1 && keycode <= 126)
 	{
-		mlx_clear_window(s->mlx, s->win);
+		//mlx_clear_window(s->mlx, s->win);
 		if (keycode == 123)
 			s->moveX += 0.3;
 		if (keycode == 126)
@@ -33,7 +31,19 @@ int     keyboard(int keycode, t_frac *s)
 			s->moveX -= 0.3;
 		if (keycode == 125)
             s->moveY -= 0.3;
-        printf("%d\n", keycode);
+        if (keycode == 8)
+        {
+            s->col.red += 50;
+            s->col.blue += 50;
+            s->col.green += 50;
+        }
+        if (keycode == 9)
+        {
+            s->col.red -= 40;
+            s->col.blue -= 50;
+            s->col.green -= 50;
+        }
+        mlx_clear_window(s->mlx, s->win);
         mlx_destroy_image(s->mlx, s->image.img);
         expose(s);
 	}    
