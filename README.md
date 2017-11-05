@@ -6,4 +6,4 @@ CONTROLS:
 
 make to compile.
 
-![Alt text](/images/mandel.jpg?raw=true "Mandelbrot")
+[Mandel](/images/mandel.jpg?raw=true "Mandelbrot")
