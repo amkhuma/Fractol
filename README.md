@@ -12,5 +12,7 @@ MANDELBROT
 
 
 TRICORN
+![flower](https://user-images.githubusercontent.com/26407096/32414990-6aae4610-c23a-11e7-973e-51744ace59d1.png)
+
 
 FLOWER
