@@ -6,4 +6,11 @@ CONTROLS:
 
 make to compile.
 
+
+MANDELBROT
 ![mandel](https://user-images.githubusercontent.com/26407096/32414957-f16d9148-c239-11e7-98b7-50e1ebdc9ee3.png)
+
+
+TRICORN
+
+FLOWER
