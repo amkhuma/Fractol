@@ -51,3 +51,21 @@ void    set_colours(t_frac *s, int r, int g, int b)
     s->color.g = g;
     s->color.b = b;
 }
+
+void	ft_burning_ship(t_frac *s)
+{
+	int i;
+	
+	i = 0;
+	init_extras(s);
+	s->z_im = 0;
+	while (s->z_r * s->z_r + s->z_im * s->z_im < 4 && i < s->maxIterations)
+	{
+		s->tmp = s->z_r;
+		s->z_r = s->z_r * s->z_r - s->z_im * s->z_im - s->pos.real;
+		s->z_im = 2 * fabs(s->tmp) * fabs(s->z_im) + s->pos.imag;
+		set_colours(s, i * s->col.red, s->col.green * i * i / 3, s->col.blue * (i < s->maxIterations));
+		pixel(s, s->x, s->y);
+		++i;	
+	}
+}
